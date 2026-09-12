@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin.html
+Disallow: /gestioneaza-rezervarea.html
+
+Sitemap: https://www.curateniaperfecta.ro/sitemap.xml

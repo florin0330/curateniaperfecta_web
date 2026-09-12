@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cere ofertă de curățenie | Curățenia Perfectă</title>
+<meta name="description" content="Cere o ofertă gratuită pentru curățenie în București sau Ilfov. Completezi formularul, primești răspuns rapid pe email.">
+<meta name="theme-color" content="#0f6b4c">
+<link rel="canonical" href="https://www.curateniaperfecta.ro/contact.html">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a href="index.html" class="brand"><img src="assets/img/logo.png" alt="Curățenia Perfectă"> Curățenia Perfectă</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html" data-page="index.html">Acasă</a></li>
+        <li><a href="servicii.html" data-page="servicii.html">Servicii</a></li>
+        <li><a href="despre-noi.html" data-page="despre-noi.html">Despre noi</a></li>
+        <li><a href="contact.html" data-page="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <a href="tel:0726712535" class="nav-phone">0726 712 535</a>
+      <a href="contact.html" class="btn btn-primary">Cere ofertă</a>
+      <button class="nav-toggle" aria-label="Deschide meniul" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="section-tight" style="padding-top:56px;">
+    <div class="container">
+      <div class="hero-grid" style="align-items:start;">
+        <div>
+          <span class="eyebrow">Contact</span>
+          <h1><span class="text-gradient">Cere o ofertă</span> gratuită</h1>
+          <p class="lead">Completează formularul cu detaliile spațiului tău. Îți trimitem un email de confirmare imediat, apoi revenim rapid cu un răspuns.</p>
+
+          <div class="card" style="margin-top:28px;">
+            <h3>Sau contactează-ne direct</h3>
+            <p style="margin-bottom:6px;">📞 <a href="tel:0726712535">0726 712 535</a></p>
+            <p style="margin-bottom:0;">✉️ <a href="mailto:office@curateniaperfecta.ro">office@curateniaperfecta.ro</a></p>
+          </div>
+
+          <div class="card" style="margin-top:16px;">
+            <h3>Ai deja o cerere trimisă?</h3>
+            <p style="margin-bottom:0;">Folosește linkul din emailul primit ca să-i vezi stadiul, sau <a href="gestioneaza-rezervarea.html">accesează pagina de gestionare</a>.</p>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <form id="booking-form">
+            <div class="form-row">
+              <div class="field">
+                <label for="name">Nume complet *</label>
+                <input type="text" id="name" name="name" required autocomplete="name">
+              </div>
+              <div class="field">
+                <label for="phone">Telefon *</label>
+                <input type="tel" id="phone" name="phone" required autocomplete="tel">
+              </div>
+            </div>
+            <div class="field">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required autocomplete="email">
+              <p class="hint">Aici primești confirmarea și linkul de gestionare a cererii.</p>
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label for="service">Tip serviciu *</label>
+                <select id="service" name="service" required>
+                  <option value="" disabled selected>Alege un serviciu</option>
+                  <option value="intretinere">Curățenie de întreținere</option>
+                  <option value="generala">Curățenie generală</option>
+                  <option value="constructor">Curățenie după constructor</option>
+                  <option value="birouri">Curățenie birouri</option>
+                  <option value="tapiterie">Curățare mochetă / canapele</option>
+                  <option value="geamuri">Curățare geamuri</option>
+                  <option value="altele">Alt serviciu</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="zone">Sector / zonă</label>
+                <input type="text" id="zone" name="zone" placeholder="ex: Sector 3, București">
+              </div>
+            </div>
+            <div class="field">
+              <label for="preferredDate">Data dorită</label>
+              <input type="text" id="preferredDate" name="preferredDate" placeholder="ex: cât mai curând / o dată anume">
+            </div>
+            <div class="field">
+              <label for="details">Detalii suplimentare</label>
+              <textarea id="details" name="details" placeholder="Suprafață aproximativă, ce tip de spațiu, orice ne ajută să pregătim oferta"></textarea>
+            </div>
+            <div class="field">
+              <label class="checkbox-field">
+                <input type="checkbox" id="consent" name="consent" required>
+                <span>Am citit și sunt de acord cu <a href="termeni.html" target="_blank" rel="noopener">Termenii și condițiile</a> și cu prelucrarea datelor mele pentru a primi un răspuns la această cerere.</span>
+              </label>
+            </div>
+            <button type="submit" id="booking-submit" class="btn btn-primary btn-block">Trimite cererea</button>
+            <div id="booking-msg" class="form-msg" role="status"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <h4>Curățenia Perfectă</h4>
+      <p style="color:#cfe3d7;max-width:38ch;">Firmă de curățenie profesională pentru locuințe, birouri și spații după constructor, în București și Ilfov.</p>
+    </div>
+    <div>
+      <h4>Navigare</h4>
+      <ul class="footer-links">
+        <li><a href="servicii.html">Servicii</a></li>
+        <li><a href="despre-noi.html">Despre noi</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="gestioneaza-rezervarea.html">Gestionează rezervarea</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul class="footer-links">
+        <li><a href="tel:0726712535">0726 712 535</a></li>
+        <li><a href="mailto:office@curateniaperfecta.ro">office@curateniaperfecta.ro</a></li>
+        <li>București &amp; Ilfov</li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© <span id="year"></span> Curățenia Perfectă</span>
+    <span><a href="termeni.html">Termeni &amp; confidențialitate</a></span>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script type="module" src="assets/js/booking.js"></script>
+</body>
+</html>
