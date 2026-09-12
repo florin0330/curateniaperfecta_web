@@ -151,9 +151,6 @@ img { max-width: 100%; display: block; }
   width: 46%; opacity: 0.9; z-index: 1;
   filter: drop-shadow(0 12px 26px rgba(0,0,0,0.18));
 }
-.hero-sparkle { position: absolute; color: var(--sun); opacity: 0.9; z-index: 1; }
-.hero-sparkle.s1 { top: 14%; right: 16%; width: 22px; }
-.hero-sparkle.s2 { bottom: 30%; left: 12%; width: 15px; }
 .wipe-mask {
   position: absolute; inset: 0;
   background: var(--paper);
@@ -256,6 +253,12 @@ button:focus-visible, a:focus-visible, .nav-toggle:focus-visible {
 }
 .field textarea { resize: vertical; min-height: 110px; }
 .field .hint { font-size: 0.8rem; color: var(--ink-soft); margin-top: 4px; }
+.checkbox-field { display: flex; align-items: flex-start; gap: 10px; cursor: pointer; }
+.checkbox-field input[type="checkbox"] {
+  width: 18px; height: 18px; margin-top: 2px; flex-shrink: 0; accent-color: var(--accent); cursor: pointer;
+}
+.checkbox-field span { font-size: 0.88rem; color: var(--ink-soft); line-height: 1.5; }
+.checkbox-field a { color: var(--accent); text-decoration: underline; }
 .form-msg { margin-top: 16px; padding: 12px 16px; border-radius: var(--radius-sm); font-size: 0.9rem; display: none; }
 .form-msg.show { display: block; }
 .form-msg.ok { background: #e6f3ec; color: var(--accent-ink); border: 1px solid var(--mist); }
@@ -347,3 +350,112 @@ table.admin-table tr:last-child td { border-bottom: none; }
 
 .gate { min-height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 40px 20px; }
 .gate .card { max-width: 380px; }
+
+/* ---- Floating WhatsApp button ---- */
+.whatsapp-float {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 999;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #25d366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(15, 30, 22, 0.28), 0 1px 3px rgba(15, 30, 22, 0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: wa-pop 0.4s ease 0.6s both;
+}
+.whatsapp-float:hover {
+  transform: scale(1.07);
+  box-shadow: 0 6px 20px rgba(15, 30, 22, 0.32), 0 2px 5px rgba(15, 30, 22, 0.2);
+}
+.whatsapp-float svg { width: 30px; height: 30px; display: block; }
+.whatsapp-float .wa-ping {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #25d366;
+  opacity: 0.55;
+  animation: wa-ping 2.4s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+@keyframes wa-ping {
+  0% { transform: scale(1); opacity: 0.55; }
+  75%, 100% { transform: scale(1.9); opacity: 0; }
+}
+@keyframes wa-pop {
+  from { transform: scale(0); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .whatsapp-float { animation: none; }
+  .whatsapp-float .wa-ping { display: none; }
+}
+@media (max-width: 640px) {
+  .whatsapp-float { right: 14px; bottom: 14px; width: 52px; height: 52px; }
+  .whatsapp-float svg { width: 27px; height: 27px; }
+}
+
+/* ---- Trust bar (under hero) ---- */
+.trust-bar { padding: 28px 0; background: var(--paper-raised); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+@media (max-width: 860px) { .trust-grid { grid-template-columns: repeat(2, 1fr); } }
+.trust-item { display: flex; align-items: center; gap: 10px; font-size: 0.88rem; color: var(--ink-soft); font-weight: 500; }
+.trust-item svg { width: 22px; height: 22px; color: var(--accent); flex-shrink: 0; }
+
+/* ---- Stats / counters ---- */
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; text-align: center; }
+@media (max-width: 860px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
+.stat-num { display: block; font-family: var(--font-display); font-weight: 600; font-size: clamp(2rem, 4vw, 2.6rem); color: var(--accent); line-height: 1; }
+.stat-label { display: block; margin-top: 8px; font-size: 0.88rem; color: var(--ink-soft); }
+
+/* ---- Zone acoperite (chip grid) ---- */
+.zone-grid { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+.zone-chip {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--paper-raised); border: 1px solid var(--line); border-radius: 999px;
+  padding: 10px 18px; font-size: 0.92rem; color: var(--ink); font-weight: 500;
+}
+.zone-chip svg { width: 16px; height: 16px; color: var(--accent); }
+.zone-chip.ilfov { background: var(--accent); color: #fff; border-color: var(--accent); }
+.zone-chip.ilfov svg { color: var(--sun); }
+
+/* ---- Testimonials ---- */
+.testimonial-card { display: flex; flex-direction: column; }
+.testimonial-stars { display: flex; gap: 3px; color: var(--sun); margin-bottom: 14px; }
+.testimonial-stars svg { width: 16px; height: 16px; }
+.testimonial-card p { font-style: italic; color: var(--ink); flex-grow: 1; }
+.testimonial-author { margin-top: 14px; font-family: var(--font-mono); font-size: 0.78rem; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.04em; }
+
+/* ---- FAQ accordion ---- */
+.faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+.faq-item { background: var(--paper-raised); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 4px 20px; }
+.faq-item summary {
+  cursor: pointer; list-style: none; padding: 16px 0;
+  font-family: var(--font-body); font-weight: 600; color: var(--accent-ink);
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: "+"; font-size: 1.3rem; font-weight: 400; color: var(--accent); flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-item p { padding-bottom: 16px; margin: 0; }
+
+/* ---- Photo placeholders (until real photos are added) ---- */
+.photo-placeholder {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 10px; text-align: center; padding: 24px;
+  border: 2px dashed var(--line); border-radius: var(--radius);
+  background: var(--mist); color: var(--ink-soft);
+}
+.photo-placeholder svg { width: 30px; height: 30px; color: var(--accent); opacity: 0.7; }
+.photo-placeholder .ph-label { font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--accent-ink); }
+.photo-placeholder .ph-hint { font-size: 0.8rem; max-width: 22ch; }
+.photo-placeholder.tall { aspect-ratio: 4 / 5; }
+.photo-placeholder.wide { aspect-ratio: 4 / 3; }
+.photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+@media (max-width: 860px) { .photo-grid { grid-template-columns: 1fr; } }

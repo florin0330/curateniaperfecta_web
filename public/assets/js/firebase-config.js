@@ -8,13 +8,12 @@
 // functions/index.js (currently "europe-west1").
 
 export const firebaseConfig = {
-  apiKey: "AIzaSyBKSJFmUF8_eonvQY_H4eFIHRBqgxz-QEQ",
-  authDomain: "dfffff-15343.firebaseapp.com",
-  projectId: "dfffff-15343",
-  storageBucket: "dfffff-15343.firebasestorage.app",
-  messagingSenderId: "999499342074",
-  appId: "1:999499342074:web:fb5a21ea8bb95d67ae6943",
-  measurementId: "G-KX5DW7E1Z0",
+  apiKey: "REPLACE_ME",
+  authDomain: "REPLACE_ME.firebaseapp.com",
+  projectId: "REPLACE_ME",
+  storageBucket: "REPLACE_ME.appspot.com",
+  messagingSenderId: "REPLACE_ME",
+  appId: "REPLACE_ME",
 };
 
 export const functionsRegion = "europe-west1";
